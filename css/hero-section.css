@@ -6,7 +6,6 @@
     overflow: hidden;
     padding: 100px 20px;
     background-color: var(--blue-darker);
-    /*background: linear-gradient(180deg, var(--blue-darker) 0%, var(--fg) 100%);*/
 }
 
 /* Container */
