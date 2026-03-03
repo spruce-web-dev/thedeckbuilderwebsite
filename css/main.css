@@ -10,6 +10,9 @@
     --blue-dark: #1F3063;
     --blue-darker: #0F1A3D;
     --red: #DE2543;
+
+    --main-font: 'Bebas Neue', sans-serif;
+    --secondary-font: "Montserrat", sans-serif;
 }
 
 *, *::before, *::after {
@@ -46,13 +49,17 @@ ul {
 
 /* --- Typography --- */
 .font-display {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--main-font);
     letter-spacing: 0.02em;
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: var(--main-font);
     line-height: 1.1;
+}
+
+p {
+    font-family: var(--secondary-font);
 }
 
 /* --- Patterns --- */

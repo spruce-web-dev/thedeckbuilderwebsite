@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- External CSS -->
     <link rel="stylesheet" href="./css/main.css">
@@ -314,7 +315,7 @@
             border-radius: 50%;
             background: var(--accent);
             color: white;
-            font-family: 'Bebas Neue', sans-serif;
+            font-family: var(--main-font);
             font-size: 1.5rem;
             display: flex;
             align-items: center;
@@ -736,16 +737,9 @@
 
     <!-- Navigation -->
     <nav class="nav">
-        <div class="container nav-inner">
+        <div class="container nav-inner" style="max-width: 1500px;">
             <a href="#" class="logo">
-                <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="4" y="16" width="24" height="4" rx="1" />
-                    <rect x="6" y="12" width="20" height="4" rx="1" />
-                    <rect x="8" y="8" width="16" height="4" rx="1" />
-                    <line x1="8" y1="20" x2="8" y2="26" />
-                    <line x1="24" y1="20" x2="24" y2="26" />
-                </svg>
-                <span class="font-display">The Deck Builder</span>
+                <img src="./images/logo.webp" style="width: 200px;">
             </a>
 
             <div class="nav-links">
@@ -781,13 +775,14 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="hero grid-pattern">
-        <div class="container">
+    <section class="hero grid-pattern relative">
+        <div class="container" style="max-width: 1500px;">
             <div class="hero-grid">
                 <!-- Left Content -->
                 <div class="hero-content">
+                    <p class="badge">Colorado's Most Trusted Deck Builders</p>
                     <div class="wood-accent"></div>
-                    <h1>BUILD YOUR<br><span class="accent">OUTDOOR</span><br>DREAM SPACE</h1>
+                    <h1>BUILD YOUR<br><span class="accent">OUTDOOR</span> DREAM SPACE</h1>
                     <p>
                         Custom deck design and construction for homeowners who demand
                         quality craftsmanship, premium materials, and outdoor spaces
@@ -797,9 +792,31 @@
                         <a href="#contact" class="btn-primary">Start Your Project</a>
                         <a href="#projects" class="btn-secondary">View Our Work</a>
                     </div>
-                </div>    
+
+                    <!-- Stats -->
+                    <div class="stats reveal reveal-delay-4">
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Decks Built</div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-number">15</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Satisfaction</div>
+                        </div>
+                    </div>
+                </div>                 
             </div>
         </div>
+
+        <div class="hero-img-container">
+            
+        </div> 
         
         <!-- Scroll Indicator -->
         <div class="scroll-indicator">
