@@ -1,0 +1,150 @@
+/* ============================================================
+   BASE.CSS — Variables, Reset, Typography
+   ============================================================ */
+
+:root {
+    --bg: #F4F5F7;
+    --fg: #1F3063;
+    --muted: #64748B;
+    --accent: #DE2543;
+    --accent-hover: #B81E38;
+    --card: #FFFFFF;
+    --border: #E2E8F0;
+    --blue-dark: #1F3063;
+    --blue-darker: #0F1A3D;
+    --red: #DE2543;
+
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Source Sans 3', sans-serif;
+    --font-ui: 'Montserrat', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-display);
+    line-height: 1.1;
+}
+
+p {
+    font-family: var(--font-ui);
+}
+
+/* Noise overlay */
+.noise-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Patterns */
+.grid-pattern {
+    background-image: linear-gradient(rgba(255, 255, 255, .03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .03) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+.section-pattern {
+    background-image: linear-gradient(rgba(31, 48, 99, .03) 1px, transparent 1px), linear-gradient(90deg, rgba(31, 48, 99, .03) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* Utilities */
+.container {
+    max-width: 1152px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: var(--muted);
+}
+
+.bg-white {
+    background-color: var(--card);
+}
+
+.relative {
+    position: relative;
+}
+
+/* Scroll animation */
+[data-animate] {
+    opacity: 0;
+}
+
+[data-animate].visible {
+    animation: fadeInUp .6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
