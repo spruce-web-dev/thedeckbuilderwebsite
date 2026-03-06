@@ -24,6 +24,11 @@
     margin-bottom: 30px;
 }
 
+.hero-content {
+    position: relative;
+    z-index: 50;
+}
+
 .hero-content h1 {
     font-size: 6rem;
     line-height: 1;
@@ -33,7 +38,21 @@
 
 @media (max-width: 768px) {
     .hero-content h1 {
-        font-size: 48px;
+        font-size: 65px;
+        text-align: center;
+    }
+    .hero-content p {
+        text-align: center;
+    }
+    .stats {
+        display: none;
+    }
+    .buttons {
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+    .wood-accent {
+        margin: 50px auto;
     }
 }
 
@@ -101,4 +120,13 @@
     height: 30px;
     margin: 10px auto 0;
     background: linear-gradient(to bottom, var(--bg), transparent);
+}
+
+@media (max-width: 1275px) {
+    .hero-img-container {
+        display: none;
+    }
+    .badge {
+        display: none;
+    }
 }
