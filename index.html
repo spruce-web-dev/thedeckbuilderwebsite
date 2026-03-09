@@ -227,12 +227,47 @@
                     work.</p>
             </div>
             <div class="filter-bar" data-animate>
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="wood">Wood</button>
-                <button class="filter-btn" data-filter="composite">Composite</button>
-                <button class="filter-btn" data-filter="pergola">Pergolas</button>
+                <button 
+                    onclick="displayGallery('all', 'All Projects')" 
+                    class="filter-btn active" 
+                    data-filter="all"
+                >
+                    All Projects
+                </button>
+                <button 
+                    onclick="displayGallery('wood-deck', 'Wood Decks')" 
+                    class="filter-btn" 
+                    data-filter="wood"
+                >
+                    Wood Decks
+                </button>
+                <button 
+                    onclick="displayGallery('composite-deck', 'Composite Decks')" 
+                    class="filter-btn" 
+                    data-filter="wood"
+                >
+                    Composite Decks
+                </button>
+                <button 
+                    onclick="displayGallery('pergola', 'Pergolas & Covered Patios')" 
+                    class="filter-btn" 
+                >
+                    Pergolas & Covered Patios
+                </button>
+                <button 
+                    onclick="displayGallery('stamped-concrete', 'Stamped Concrete')" 
+                    class="filter-btn" 
+                    data-filter="pergola"
+                >
+                    Stamped Concrete
+                </button>
             </div>
-            <div id="galleryGrid" class="gallery-grid"></div>
+            <div id="galleryGrid" class="gallery-grid" data-animate></div>
+            <div class="gallery-load-more">
+                <button id="loadMoreBtn" class="btn-primary" onclick="renderMoreGallery()" style="display:none;">
+                    Load More
+                </button>
+            </div>
         </div>
     </section>
 
@@ -606,46 +641,92 @@
         </div>
     </div>
 
-    <script>
-        // Gallery data
-        const projects = [
-            { id: 1, title: 'Multi-Level Cedar Deck', type: 'wood', size: '480 sq ft', location: 'West Chester, PA', image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop' },
-            { id: 2, title: 'Trex Composite Platform', type: 'composite', size: '320 sq ft', location: 'Wilmington, DE', image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=400&fit=crop' },
-            { id: 3, title: 'Pergola with Seating', type: 'pergola', size: 'Custom', location: 'Cherry Hill, NJ', image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop' },
-            { id: 4, title: 'Pressure-Treated Wraparound', type: 'wood', size: '600 sq ft', location: 'King of Prussia, PA', image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=400&fit=crop' },
-            { id: 5, title: 'TimberTech Edge Deck', type: 'composite', size: '400 sq ft', location: 'Media, PA', image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop' },
-            { id: 6, title: 'Screened Porch Addition', type: 'wood', size: '250 sq ft', location: 'Haddonfield, NJ', image: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&h=400&fit=crop' },
-            { id: 7, title: 'Freestanding Pergola', type: 'pergola', size: '12x14', location: 'Newark, DE', image: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&h=400&fit=crop' },
-            { id: 8, title: 'Pool Deck with Rails', type: 'composite', size: '550 sq ft', location: 'Exton, PA', image: 'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&h=400&fit=crop' },
-            { id: 9, title: 'Ranch-Style Wrap Deck', type: 'wood', size: '720 sq ft', location: 'Doylestown, PA', image: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=600&h=400&fit=crop' },
-        ];
+    <script type="module">
+        import Projects from "./scripts/Projects.js";
 
-        const galleryGrid = document.getElementById('galleryGrid');
-
-        function renderGallery(filter) {
-            const items = filter === 'all' ? projects : projects.filter(p => p.type === filter);
-            galleryGrid.innerHTML = items.map(p => `
-        <article class="gallery-item" data-type="${p.type}">
-          <div class="gallery-img-wrapper">
-            <img src="${p.image}" alt="${p.title}" loading="lazy">
-          </div>
-          <div class="gallery-info">
-            <h3>${p.title}</h3>
-            <div class="gallery-meta"><span>${p.size}</span><span>${p.location}</span></div>
-          </div>
-        </article>
-      `).join('');
+        window.onload = function() {
+            displayGallery('all');
         }
 
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                renderGallery(btn.dataset.filter);
-            });
-        });
-        renderGallery('all');
+        // pagination
+        let galleryImages = [];
+        let galleryIndex = 0;
+        const GALLERY_BATCH = 6;
 
+        // render gallery with paginated and filtered reults
+        window.displayGallery = function(filter = 'all', current='All Projects') {
+            const galleryGrid = document.getElementById('galleryGrid');
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+            galleryGrid.innerHTML = "";
+            galleryIndex = 0;
+
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent.trim() === current) {
+                    btn.classList.add('active');
+                }
+            });
+
+            let items;
+
+            if (filter === 'all') {
+                items = Projects;
+            } else {
+                const filters = Array.isArray(filter) ? filter : [filter];
+
+                items = Projects.filter(p =>
+                    p.categories.some(c => filters.includes(c))
+                );
+            }
+
+            galleryImages = items.flatMap(p =>
+                p.images.map(img => ({
+                    name: p.name,
+                    location: p.location,
+                    categories: p.categories,
+                    image: img
+                }))
+            );
+
+            renderMoreGallery();
+            loadMoreBtn.style.display = galleryImages.length > GALLERY_BATCH ? "block" : "none";
+        }
+
+        window.renderMoreGallery = function() {
+            const galleryGrid = document.getElementById('galleryGrid');
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+            const nextItems = galleryImages.slice(galleryIndex, galleryIndex + GALLERY_BATCH);
+
+            galleryGrid.insertAdjacentHTML("beforeend",
+                nextItems.map(p => `
+                    <article class="gallery-item" data-type="${p.categories.join(' ')}">
+                        <div class="gallery-img-wrapper">
+                            <img src="/images/projects/${p.image}" alt="${p.name}" loading="lazy">
+                        </div>
+
+                        <div class="gallery-info">
+                            <h3>${p.name}</h3>
+                            <div class="gallery-meta">
+                                <span>${p.location}</span>
+                            </div>
+                        </div>
+                    </article>
+                `).join('')
+            );
+
+            galleryIndex += GALLERY_BATCH;
+
+            if (galleryIndex >= galleryImages.length) {
+                loadMoreBtn.style.display = "none";
+            }
+        }
+    </script>
+
+    <script>
         // Mobile menu
         const mobileMenu = document.getElementById('mobileMenu');
         document.getElementById('menuBtn').addEventListener('click', () => mobileMenu.classList.add('open'));

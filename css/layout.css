@@ -316,6 +316,10 @@
     gap: 1rem;
 }
 
+.gallery-load-more button {
+    margin: 50px auto 0px auto;
+}
+
 @media (min-width: 640px) {
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
