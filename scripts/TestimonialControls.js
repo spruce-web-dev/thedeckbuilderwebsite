@@ -1,4 +1,4 @@
-window.onload = function() {
+window.addEventListener("load", function () {
     document.querySelectorAll(".read-more-btn").forEach(btn => {
         btn.addEventListener("click", () => {
             const card = btn.closest(".testimonial-card");
@@ -9,4 +9,4 @@ window.onload = function() {
                 : "Read more";
         });
     });
-}
+});
