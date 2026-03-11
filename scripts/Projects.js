@@ -173,5 +173,3 @@ const Projects = [
         images: ["wooddeck-project6.1.jpg"]
     }
 ];
-
-export default Projects;
