@@ -36,6 +36,7 @@
     <script src="./components/ServicesSidebar.js"></script>
     <script src="./components/ServicesContent.js"></script>
     <script src="./components/Testimonials.js"></script>
+    <script src="./components/Contact.js"></script>
 
     <!-- JS -->
     <script src="./scripts/Projects.js"></script>
@@ -297,28 +298,6 @@
 
             activateSidebar("Stamped Concrete");
         };
-
-        function bindFAQs(container) {
-            container.querySelectorAll('.faq-q').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const item = btn.closest('.faq-item');
-                    const ans = item.querySelector('.faq-a');
-                    const wasOpen = btn.classList.contains('open');
-                    container.querySelectorAll('.faq-q').forEach(b => {
-                        b.classList.remove('open');
-                        b.closest('.faq-item').querySelector('.faq-a').classList.remove('open');
-                    });
-                    if (!wasOpen) { btn.classList.add('open'); ans.classList.add('open'); }
-                });
-            });
-        }
-
-        document.querySelectorAll('.sb-deck-link').forEach(link => {
-            link.addEventListener('click', e => {
-                e.preventDefault();
-                loadService(link.dataset.service);
-            });
-        });
 
         document.getElementById('menuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
         document.getElementById('closeMenuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
