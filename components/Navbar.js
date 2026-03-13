@@ -15,8 +15,7 @@ class SiteNavbar extends HTMLElement {
                                     <a href="/custom-decks.html">Custom Decks</a>
                                     <a href="./pergolas-covered-patios.html">Pergolas &amp; Covered Patios</a>
                                     <a href="#services">Outdoor Kitchens &amp; Firepits</a>
-                                    <a href="#services">Deck Refinishing &amp; Repairs</a>
-                                    <a href="#services">Stamped Concrete Services</a>
+                                    <a href="./stamped-concrete-services.html">Stamped Concrete Services</a>
                                 </div>
                             </div>
                             <a href="#gallery">Gallery</a>
@@ -51,8 +50,7 @@ class SiteNavbar extends HTMLElement {
                         <a href="./custom-decks.html">Custom Decks</a>
                         <a href="./pergolas-covered-patios.html">Pergolas &amp; Covered Patios</a>
                         <a href="#services">Outdoor Kitchens &amp; Firepits</a>
-                        <a href="#services">Deck Refinishing &amp; Repairs</a>
-                        <a href="#services">Stamped Concrete Services</a>
+                        <a href="./stamped-concrete-services.html">Stamped Concrete Services</a>
                         <a href="#gallery">Gallery</a>
                         <a href="#process">Process</a>
                         <a href="#testimonials">Reviews</a>
