@@ -10,17 +10,17 @@ class SiteNavbar extends HTMLElement {
                         </a>
                         <div class="nav-links">
                             <div class="dropdown">
-                                <a href="#services">Services</a>
+                                <a href="./index.html#services">Services</a>
                                 <div class="dropdown-content">
                                     <a href="/custom-decks.html">Custom Decks</a>
                                     <a href="./pergolas-covered-patios.html">Pergolas &amp; Covered Patios</a>
-                                    <a href="#services">Outdoor Kitchens &amp; Firepits</a>
+                                    <a href="./outdoor-kitchens-firepits.html">Outdoor Kitchens &amp; Firepits</a>
                                     <a href="./stamped-concrete-services.html">Stamped Concrete Services</a>
                                 </div>
                             </div>
-                            <a href="#gallery">Gallery</a>
-                            <a href="#areas">Areas We Serve</a>
-                            <a href="#about">About Us</a>
+                            <a href="./index.html#gallery">Gallery</a>
+                            <a href="./index.html#areas">Areas We Serve</a>
+                            <a href="./index.html#about">About Us</a>
                             <div class="nav-phone">
                                 <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -28,7 +28,7 @@ class SiteNavbar extends HTMLElement {
                                 </svg>
                                 <a href="tel:+13039488821">303-948-8821</a>
                             </div>
-                            <a href="#contact" class="btn-primary" style="color: var(--bg);">Contact Us</a>
+                            <a href="./contact-us.html" class="btn-primary" style="color: var(--bg);">Contact Us</a>
                         </div>
                         <button id="menuBtn" class="mobile-menu-btn" aria-label="Open menu">
                             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -46,17 +46,17 @@ class SiteNavbar extends HTMLElement {
                         </svg>
                     </button>
                     <nav>
-                        <a href="#services">Services</a>
+                        <a href="./index.html#services">Services</a>
                         <a href="./custom-decks.html">Custom Decks</a>
                         <a href="./pergolas-covered-patios.html">Pergolas &amp; Covered Patios</a>
-                        <a href="#services">Outdoor Kitchens &amp; Firepits</a>
+                        <a href="./outdoor-kitchens-firepits.html">Outdoor Kitchens &amp; Firepits</a>
                         <a href="./stamped-concrete-services.html">Stamped Concrete Services</a>
-                        <a href="#gallery">Gallery</a>
-                        <a href="#process">Process</a>
-                        <a href="#testimonials">Reviews</a>
-                        <a href="#areas">Areas We Serve</a>
-                        <a href="#about">About Us</a>
-                        <a href="#contact" class="btn-primary" style="margin-top:1rem; text-align: center;">Contact Us</a>
+                        <a href="./index.html#gallery">Gallery</a>
+                        <a href="./index.html#process">Process</a>
+                        <a href="./index.html#testimonials">Reviews</a>
+                        <a href="./index.html#areas">Areas We Serve</a>
+                        <a href="./index.html#about">About Us</a>
+                        <a href="./contact-us.html" class="btn-primary" style="margin-top:1rem; text-align: center;">Contact Us</a>
                     </nav>
                 </div>
             </div>

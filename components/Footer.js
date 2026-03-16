@@ -13,21 +13,21 @@ class SiteFooter extends HTMLElement {
                         <div>
                             <h4>Services</h4>
                             <ul>
-                                <li><a href="#services">Wood Decks</a></li>
-                                <li><a href="#services">Composite Decks</a></li>
-                                <li><a href="#services">Outdoor Kitchens & Firepits</a></li>
-                                <li><a href="#services">Pergolas & Covered Patios</a></li>
-                                <li><a href="#services">Stamped Concrete Services</a></li>
+                                <li><a href="./custom-decks.html">Wood Decks</a></li>
+                                <li><a href="./custom-decks.html">Composite Decks</a></li>
+                                <li><a href="./outdoor-kitchens-firepits.html">Outdoor Kitchens & Firepits</a></li>
+                                <li><a href="./pergolas-covered-patios.html">Pergolas & Covered Patios</a></li>
+                                <li><a href="./stamped-concrete-services.html">Stamped Concrete Services</a></li>
                             </ul>
                         </div>
                         <div>
                             <h4>Company</h4>
                             <ul>
-                                <li><a href="#gallery">Our Work</a></li>
-                                <li><a href="#testimonials">Reviews</a></li>
-                                <li><a href="#about">About</a></li>
-                                <li><a href="#areas">Areas We Serve</a></li>
-                                <li><a href="#contact">Contact</a></li>
+                                <li><a href="./index.html#gallery">Our Work</a></li>
+                                <li><a href="./index.html#testimonials">Reviews</a></li>
+                                <li><a href="./index.html#about">About</a></li>
+                                <li><a href="./index.html#areas">Areas We Serve</a></li>
+                                <li><a href="./about-us.html">Contact</a></li>
                             </ul>
                         </div>
                         <div>
@@ -35,7 +35,7 @@ class SiteFooter extends HTMLElement {
                             <ul>
                                 <li>(303) 948-8821</li>
                                 <li>Richard@DeckBuilderofCO.com</li>
-                                <li>Mon–Fri: 7am – 6pm</li>
+                                <li>Mon – Fri: 7am – 6pm</li>
                                 <li>Sat: 8am – 2pm</li>
                             </ul>
                         </div>
@@ -43,7 +43,7 @@ class SiteFooter extends HTMLElement {
                     <div class="footer-bottom">
                         <p>2026 The Deck Builder. All rights reserved.</p>
                         <div class="social-links">
-                            <a href="www.facebook.com/deckbuilderofco" aria-label="Facebook"><svg fill="currentColor" viewBox="0 0 24 24">
+                            <a href="https://www.facebook.com/deckbuilderofco" aria-label="Facebook"><svg fill="currentColor" viewBox="0 0 24 24">
                                     <path
                                         d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                                 </svg></a>
