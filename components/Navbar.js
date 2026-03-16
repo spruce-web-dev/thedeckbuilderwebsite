@@ -20,7 +20,7 @@ class SiteNavbar extends HTMLElement {
                             </div>
                             <a href="./index.html#gallery">Gallery</a>
                             <a href="./index.html#areas">Areas We Serve</a>
-                            <a href="./index.html#about">About Us</a>
+                            <a href="./about.html">About Us</a>
                             <div class="nav-phone">
                                 <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -55,7 +55,7 @@ class SiteNavbar extends HTMLElement {
                         <a href="./index.html#process">Process</a>
                         <a href="./index.html#testimonials">Reviews</a>
                         <a href="./index.html#areas">Areas We Serve</a>
-                        <a href="./index.html#about">About Us</a>
+                        <a href="./about.html">About Us</a>
                         <a href="./contact-us.html" class="btn-primary" style="margin-top:1rem; text-align: center;">Contact Us</a>
                     </nav>
                 </div>

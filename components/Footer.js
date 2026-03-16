@@ -25,9 +25,9 @@ class SiteFooter extends HTMLElement {
                             <ul>
                                 <li><a href="./index.html#gallery">Our Work</a></li>
                                 <li><a href="./index.html#testimonials">Reviews</a></li>
-                                <li><a href="./index.html#about">About</a></li>
+                                <li><a href="./about.html">About</a></li>
                                 <li><a href="./index.html#areas">Areas We Serve</a></li>
-                                <li><a href="./about-us.html">Contact</a></li>
+                                <li><a href="./about.html">Contact</a></li>
                             </ul>
                         </div>
                         <div>
