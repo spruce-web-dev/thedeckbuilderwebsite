@@ -455,57 +455,35 @@
     </section>
 
     <site-footer></site-footer>
-    
-    <!-- Success Modal -->
-    <div id="successModal" class="modal-overlay">
-        <div class="modal-content">
-            <div class="modal-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-                </svg></div>
-            <h3>Quote Request Sent</h3>
-            <p>Thanks for reaching out. We'll review your project details and get back to you within 24 hours.</p>
-            <button id="closeModal" class="btn-primary">Got It</button>
-        </div>
-    </div>
-    <script>
-        window.onload = function () {
-            displayGallery('all');
-        };
-
-        // Mobile menu
-        const mobileMenu = document.getElementById('mobileMenu');
-        document.getElementById('menuBtn').addEventListener('click', () => mobileMenu.classList.add('open'));
-        document.getElementById('closeMenuBtn').addEventListener('click', () => mobileMenu.classList.remove('open'));
-        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
-
-        // Form & modal
-        const successModal = document.getElementById('successModal');
-        document.getElementById('quoteForm').addEventListener('submit', e => {
-            e.preventDefault();
-            successModal.classList.add('active');
-            e.target.reset();
-        });
-        document.getElementById('closeModal').addEventListener('click', () => successModal.classList.remove('active'));
-        successModal.addEventListener('click', e => { if (e.target === successModal) successModal.classList.remove('active'); });
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') successModal.classList.remove('active'); });
-
-        // Scroll animations
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-        document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', e => {
-                const href = a.getAttribute('href');
-                if (href === '#') return;
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' });
-            });
-        });
-    </script>
 </body>
+
+<script>
+    window.onload = function () {
+        displayGallery('all');
+    };
+
+    // Mobile menu
+    const mobileMenu = document.getElementById('mobileMenu');
+    document.getElementById('menuBtn').addEventListener('click', () => mobileMenu.classList.add('open'));
+    document.getElementById('closeMenuBtn').addEventListener('click', () => mobileMenu.classList.remove('open'));
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+    // Scroll animations
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const href = a.getAttribute('href');
+            if (href === '#') return;
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' });
+        });
+    });
+</script>
 
 </html>
