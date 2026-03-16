@@ -552,59 +552,76 @@
 .areas-grid {
     display: grid;
     gap: 3rem;
-    align-items: start;
+    align-items: stretch;        /* ensures both columns have equal height */
 }
 
 @media (min-width: 768px) {
     .areas-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;  /* left list, right map */
     }
 }
 
+/* Location list: exact two columns, consistent pill sizing */
 .areas-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);  /* two equal columns */
+    gap: 0.75rem;
 }
 
+/* On very small screens, switch to one column for readability */
+@media (max-width: 480px) {
+    .areas-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Pill styling (no icon) */
 .area-item {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: .5rem;
-    padding: 1rem;
+    background: #f2f4f8;
+    color: #2c3e50;
+    padding: 0.6rem 1rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+    cursor: default;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    transition: transform .2s;
+    word-break: break-word;       /* allows long names to wrap */
+    min-height: 48px;              /* gives a consistent base height */
 }
 
 .area-item:hover {
+    background: #e6e9f0;
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, .05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
 }
 
-.area-item h4 {
-    font-size: 1.1rem;
-    margin-bottom: .25rem;
-}
-
-.area-item p {
-    color: var(--muted);
-    font-size: .9rem;
-    margin: 0;
-}
-
+/* Map container - now fills the entire height of its grid cell */
 .map-container {
     width: 100%;
-    height: 350px;
-    border-radius: .75rem;
+    height: 100%;                  /* take full height of grid cell */
+    border-radius: 1.5rem;
     overflow: hidden;
-    border: 1px solid var(--border);
+    box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease;
 }
 
 .map-container iframe {
     width: 100%;
-    height: 100%;
+    height: 100%;                  /* fill the container */
     border: 0;
+    display: block;                /* remove extra space below iframe */
 }
+
+.map-container:hover {
+    box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.15);
+}
+
 
 /* --- Contact --- */
 .contact-grid {
