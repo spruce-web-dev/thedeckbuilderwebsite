@@ -56,7 +56,7 @@ class SiteContact extends HTMLElement {
 
                 <!-- RIGHT SIDE FORM -->
                 <div>
-                    <form class="quote-form">
+                    <form action="https://formsubmit.co/jacopofb03@gmail.com" method="POST" class="quote-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <label>Name</label>
@@ -127,7 +127,6 @@ class SiteContact extends HTMLElement {
         const closeBtn = this.querySelector(".close-modal");
 
         form.addEventListener("submit", (e) => {
-            e.preventDefault();
             modal.classList.add("active");
             form.reset();
         });
