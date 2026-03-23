@@ -6,37 +6,32 @@ class ServicesSidebar extends HTMLElement {
                     <div class="sb-widget-title">Our Services</div>
                     <ul class="sb-tree">
                         <li>
-                            <a href="./custom-decks.html" style="font-weight:600;color:var(--fg);">Decks</a>
+                            <a href="./custom-decks.html" style="font-weight:600;color:var(--fg);"> Custom Decks</a>
                             <ul class="sub">
                                 <li>
-                                    <a href="./custom-decks.html" class="sb-deck-link" data-service="custom-decks">
-                                        Custom Decks <i class="fas fa-chevron-right"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="sb-deck-link" data-service="composite-decks">
+                                    <a href="./composite-decks.html" class="sb-deck-link" data-service="composite-decks">
                                         Composite Decks <i class="fas fa-chevron-right"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="sb-deck-link" data-service="wood-decks">
+                                    <a href="./wood-decks.html" class="sb-deck-link" data-service="wood-decks">
                                         Wood Decks <i class="fas fa-chevron-right"></i>
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="./pergolas-covered-patios.html">
+                            <a href="./pergolas-covered-patios.html" style="font-weight:600;color:var(--fg);">
                                 Pergolas &amp; Covered Patios <i class="fas fa-chevron-right"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="./outdoor-kitchens-firepits.html">
+                            <a href="./outdoor-kitchens-firepits.html" style="font-weight:600;color:var(--fg);">
                                 Outdoor Kitchens &amp; Firepits <i class="fas fa-chevron-right"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="./stamped-concrete-services.html">
+                            <a href="./stamped-concrete-services.html" style="font-weight:600;color:var(--fg);">
                                 Stamped Concrete <i class="fas fa-chevron-right"></i>
                             </a>
                         </li>
