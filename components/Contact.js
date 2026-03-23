@@ -60,18 +60,18 @@ class SiteContact extends HTMLElement {
                         <div class="form-row">
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" name="name" class="form-input" required>
+                                <input type="text" name="name" class="form-input" placeholder="Enter name..." required>
                             </div>
 
                             <div class="form-group">
                                 <label>Phone</label>
-                                <input type="tel" name="phone" class="form-input" required>
+                                <input type="tel" name="phone" class="form-input" placeholder="Enter phone number..." required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="email" name="email" class="form-input" required>
+                            <input type="email" name="email" class="form-input" placeholder="Enter email..." required>
                         </div>
 
                         <div class="form-group">
@@ -88,7 +88,7 @@ class SiteContact extends HTMLElement {
 
                         <div class="form-group">
                             <label>Project Details</label>
-                            <textarea name="message" rows="4" class="form-input"></textarea>
+                            <textarea name="message" rows="4" class="form-input" placeholder="Anything else we should know?..."></textarea>
                         </div>
 
                         <button type="submit" class="btn-primary form-submit">
