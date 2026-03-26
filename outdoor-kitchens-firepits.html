@@ -32,11 +32,14 @@
     <script src="./components/ServicesContent.js"></script>
     <script src="./components/Contact.js"></script>
     <script src="./components/Testimonials.js"></script>
+    <script src="./components/Gallery.js"></script>
 
     <!-- JS -->
     <script src="./scripts/Projects.js"></script>
     <script src="./scripts/GalleryControls.js"></script>
     <script src="./scripts/TestimonialControls.js"></script>
+    <script src="./scripts/InitMobileMenuFunctionality.js"></script>
+    <script src="./scripts/InitScrollAnimations.js"></script>
 </head>
 
 <body>
@@ -277,7 +280,12 @@
         </div>
     </div>
 
-    <services-content></services-content>
+    <services-content 
+        gallery-title="Past Work"
+        gallery-subtitle="Outdoor Kitchens Projects"
+        gallery-description="Here are examples of our outdoor kitchen work across Denver, Littleton, and surrounding areas in CO."
+        gallery-filters="outdoor-kitchen"
+    ></services-content>
 
     <site-footer></site-footer>
 
@@ -294,9 +302,6 @@
 
             activateSidebar("Outdoor Kitchens & Firepits");
         };
-
-        document.getElementById('menuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
-        document.getElementById('closeMenuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
     </script>
 </body>
 

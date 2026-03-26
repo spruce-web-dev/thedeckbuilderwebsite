@@ -27,11 +27,14 @@
     <script src="./components/ServicesContent.js"></script>
     <script src="./components/Testimonials.js"></script>
     <script src="./components/Contact.js"></script>
+    <script src="./components/Gallery.js"></script>
 
     <!-- JS -->
     <script src="./scripts/Projects.js"></script>
     <script src="./scripts/GalleryControls.js"></script>
     <script src="./scripts/TestimonialControls.js"></script>
+    <script src="./scripts/InitMobileMenuFunctionality.js"></script>
+    <script src="./scripts/InitScrollAnimations.js"></script>
 </head>
 
 <body>
@@ -233,8 +236,10 @@
 
     <!-- GALLERY COMPONENT: Updated for Composite Deck Projects -->
     <services-content 
-        gallery-name="Composite Deck Project Gallery"
-        gallery-subtitle="Explore our custom composite decks — each one uniquely designed for Colorado homeowners. From contemporary urban terraces to mountain retreats, every project showcases premium materials and expert installation."
+        gallery-title="Past Work"
+        gallery-subtitle="Composite Deck Project Gallery"
+        gallery-description="Here are examples of our composite decks across Denver, Littleton, and surrounding areas in CO."
+        gallery-filters="composite-deck"
     ></services-content>
     
     <site-footer></site-footer>
@@ -250,16 +255,8 @@
                 const link = [...document.querySelectorAll(".sb-tree a")].find(a => a.textContent.trim().startsWith(text));
                 if (link) link.classList.add("active");
             }
-            activateSidebar("Custom Composite Decks");
+            activateSidebar("Composite Decks");
         };
-
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('menuBtn');
-        const closeMenuBtn = document.getElementById('closeMenuBtn');
-        if (menuBtn && closeMenuBtn) {
-            menuBtn.addEventListener('click', () => document.getElementById('mobileMenu')?.classList.add('open'));
-            closeMenuBtn.addEventListener('click', () => document.getElementById('mobileMenu')?.classList.remove('open'));
-        }
     </script>
 </body>
 
