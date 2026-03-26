@@ -27,11 +27,14 @@
     <script src="./components/ServicesContent.js"></script>
     <script src="./components/Testimonials.js"></script>
     <script src="./components/Contact.js"></script>
+    <script src="./components/Gallery.js"></script>
 
     <!-- JS -->
     <script src="./scripts/Projects.js"></script>
     <script src="./scripts/GalleryControls.js"></script>
     <script src="./scripts/TestimonialControls.js"></script>
+    <script src="./scripts/InitMobileMenuFunctionality.js"></script>
+    <script src="./scripts/InitScrollAnimations.js"></script>
 </head>
 
 <body>
@@ -250,10 +253,14 @@
                 </div>
         </div>
     </div>
+
     <services-content 
-        gallery-name="Pergolas Project Gallery"
-        gallery-subtitle="Every pergola we build is custom-designed for the space and the homeowner. Here's a sample of our past work."
+        gallery-title="Past Work"
+        gallery-subtitle="Outdoor Kitchens Project Gallery"
+        gallery-description="Here are examples of our pergola work across Denver, Littleton, and surrounding areas in CO."
+        gallery-filters="pergola"
     ></services-content>
+
     <site-footer></site-footer>
 
     <script>
@@ -269,9 +276,6 @@
 
             activateSidebar("Pergolas & Covered Patios");
         };
-
-        document.getElementById('menuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
-        document.getElementById('closeMenuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
     </script>
 </body>
 

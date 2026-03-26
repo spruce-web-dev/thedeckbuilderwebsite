@@ -21,6 +21,10 @@
     <script src="./components/Footer.js"></script>
     <script src="./components/Contact.js"></script>
 
+    <!-- Scripts -->
+    <script src="./scripts/InitMobileMenuFunctionality.js"></script>
+    <script src="./scripts/InitScrollAnimations.js"></script>
+
     <style>
         /* Smooth animation for scroll indicator */
         .scroll-indicator {
@@ -99,6 +103,9 @@
                             <span><strong>Accredited with the Better Business Bureau</strong> since 2014 (A+ Rating)</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Our Values – now stacks on mobile (no inline grid override) -->
@@ -200,49 +207,5 @@
 
     <!-- Footer -->
     <site-footer></site-footer>
-
-    <!-- Scripts -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mobile menu
-            const mobileMenu = document.getElementById('mobileMenu');
-            const menuBtn = document.getElementById('menuBtn');
-            const closeMenuBtn = document.getElementById('closeMenuBtn');
-
-            if (menuBtn && mobileMenu && closeMenuBtn) {
-                menuBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
-                closeMenuBtn.addEventListener('click', () => mobileMenu.classList.remove('open'));
-                mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
-            }
-
-            // Scroll animations
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-            document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
-
-            // Smooth scroll
-            document.querySelectorAll('a[href^="#"]').forEach(a => {
-                a.addEventListener('click', e => {
-                    const href = a.getAttribute('href');
-                    if (href === '#') return;
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    if (target) {
-                        window.scrollTo({
-                            top: target.getBoundingClientRect().top + window.pageYOffset - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>

@@ -23,6 +23,11 @@
     <script src="./components/Navbar.js"></script>
     <script src="./components/Footer.js"></script>
     <script src="./components/Contact.js"></script>
+    <script src="./components/Gallery.js"></script>
+
+    <!-- Scripts -->
+    <script src="./scripts/InitMobileMenuFunctionality.js"></script>
+    <script src="./scripts/InitScrollAnimations.js"></script>
 </head>
 
 <!-- JS -->
@@ -157,61 +162,12 @@
         </div>
     </section>
 
-    <!-- Gallery -->
-    <section id="gallery" class="section bg-white">
-        <div class="container">
-            <div class="section-header" data-animate>
-                <p>Our Work</p>
-                <h2>Past Projects</h2>
-                <p>
-                    Every deck we build is custom-designed for the space and the homeowner. Here's a sample of our past
-                    work.
-                </p>
-            </div>
-            <div class="filter-bar" data-animate>
-                <button 
-                    onclick="displayGallery('all', 'All Projects')" 
-                    class="filter-btn active" 
-                    data-filter="all"
-                >
-                    All Projects
-                </button>
-                <button 
-                    onclick="displayGallery('wood-deck', 'Wood Decks')" 
-                    class="filter-btn" 
-                    data-filter="wood"
-                >
-                    Wood Decks
-                </button>
-                <button 
-                    onclick="displayGallery('composite-deck', 'Composite Decks')" 
-                    class="filter-btn" 
-                    data-filter="wood"
-                >
-                    Composite Decks
-                </button>
-                <button 
-                    onclick="displayGallery('pergola', 'Pergolas & Covered Patios')" 
-                    class="filter-btn" 
-                >
-                    Pergolas & Covered Patios
-                </button>
-                <button 
-                    onclick="displayGallery('stamped-concrete', 'Stamped Concrete')" 
-                    class="filter-btn" 
-                    data-filter="pergola"
-                >
-                    Stamped Concrete
-                </button>
-            </div>
-            <div id="galleryGrid" class="gallery-grid" data-animate></div>
-            <div class="gallery-load-more">
-                <button id="loadMoreBtn" class="btn-primary" onclick="renderMoreGallery()" style="display:none;">
-                    Load More
-                </button>
-            </div>
-        </div>
-    </section>
+    <site-gallery 
+        filters="all" 
+        gallery-title="Our Work" 
+        gallery-subtitle="Past Projects"
+        gallery-description="Every deck we build is custom-designed for the space and the homeowner. Here's a sample of our past work."
+    ></site-gallery>
 
     <!-- Process -->
     <section id="process" class="section section-pattern">
@@ -455,34 +411,5 @@
 
     <site-footer></site-footer>
 </body>
-
-<script>
-    window.onload = function () {
-        displayGallery('all');
-    };
-
-    // Mobile menu
-    const mobileMenu = document.getElementById('mobileMenu');
-    document.getElementById('menuBtn').addEventListener('click', () => mobileMenu.classList.add('open'));
-    document.getElementById('closeMenuBtn').addEventListener('click', () => mobileMenu.classList.remove('open'));
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
-
-    // Scroll animations
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
-
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', e => {
-            const href = a.getAttribute('href');
-            if (href === '#') return;
-            e.preventDefault();
-            const target = document.querySelector(href);
-            if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 80, behavior: 'smooth' });
-        });
-    });
-</script>
 
 </html>

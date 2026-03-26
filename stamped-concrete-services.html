@@ -37,11 +37,14 @@
     <script src="./components/ServicesContent.js"></script>
     <script src="./components/Testimonials.js"></script>
     <script src="./components/Contact.js"></script>
+    <script src="./components/Gallery.js"></script>
 
     <!-- JS -->
     <script src="./scripts/Projects.js"></script>
     <script src="./scripts/GalleryControls.js"></script>
     <script src="./scripts/TestimonialControls.js"></script>
+    <script src="./scripts/InitMobileMenuFunctionality.js"></script>
+    <script src="./scripts/InitScrollAnimations.js"></script>
 
     <!-- Schema Markup -->
     <script type="application/ld+json">
@@ -279,10 +282,14 @@
                 </div>
         </div>
     </div>
+
     <services-content 
-        gallery-name="Stamped Concrete Project Gallery"
-        gallery-subtitle="Every stamped concrete project we install is custom-designed for the homeowner and property. Here's a sample of our work across Denver and Littleton, CO."
+        gallery-title="Past Work"
+        gallery-subtitle="Stamped Concrete Project Gallery"
+        gallery-description="Here are examples of our stamped concrete work across Denver, Littleton, and surrounding areas in CO."
+        gallery-filters="stamped-conrete"
     ></services-content>
+
     <site-footer></site-footer>
 
     <script>
@@ -298,9 +305,6 @@
 
             activateSidebar("Stamped Concrete");
         };
-
-        document.getElementById('menuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
-        document.getElementById('closeMenuBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
     </script>
 </body>
 

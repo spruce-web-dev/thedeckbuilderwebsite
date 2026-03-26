@@ -1,7 +1,9 @@
 class ServicesContent extends HTMLElement {
     connectedCallback() {
-        const galleryName = this.getAttribute("gallery-name");
-        const gallerySubtitle = this.getAttribute("gallery-subtitle");
+        const galleryTitle = this.getAttribute("gallery-title") || "Our Work";
+        const gallerySubtitle = this.getAttribute("gallery-subtitle") || "Past Projects";
+        const galleryDescription = this.getAttribute("gallery-description") || "...";
+        const galleryFilters = this.getAttribute("gallery-filters") || "all";
 
         this.innerHTML = `
             <!-- PROCESS -->
@@ -63,19 +65,12 @@ class ServicesContent extends HTMLElement {
             </div>
 
             <!-- Gallery -->
-            <section id="gallery" class="section bg-white">
-                <div class="container">
-                    <div class="section-header">
-                        <p>Our Work</p>
-                        <h2 id="services-gallery-name">Pergola Project Gallery</h2>
-                        <p id="services-gallery-subtitle"></p>
-                    </div>
-                    <div id="galleryGrid" class="gallery-grid"></div>
-                    <div class="gallery-load-more">
-                        <button id="loadMoreBtn" class="btn-primary" onclick="renderMoreGallery()" style="display:none;">Load More</button>
-                    </div>
-                </div>
-            </section>
+            <site-gallery 
+                filters="${galleryFilters}" 
+                gallery-title="${galleryTitle}" 
+                gallery-subtitle="${gallerySubtitle}"
+                gallery-description="${galleryDescription}"
+            ></site-gallery>
 
             <testimonial-section></testimonial-section>
 
@@ -84,9 +79,6 @@ class ServicesContent extends HTMLElement {
                 <site-contact></site-contact>
             </section>
         `;
-
-        document.getElementById("services-gallery-name").innerText = galleryName;
-        document.getElementById("services-gallery-subtitle").innerText = gallerySubtitle;
     }
 }
 

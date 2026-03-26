@@ -28,11 +28,14 @@
     <script src="./components/ServicesContent.js"></script>
     <script src="./components/Testimonials.js"></script>
     <script src="./components/Contact.js"></script>
+    <script src="./components/Gallery.js"></script>
 
     <!-- JS -->
     <script src="./scripts/Projects.js"></script>
     <script src="./scripts/GalleryControls.js"></script>
     <script src="./scripts/TestimonialControls.js"></script>
+    <script src="./scripts/InitMobileMenuFunctionality.js"></script>
+    <script src="./scripts/InitScrollAnimations.js"></script>
 </head>
 
 <body>
@@ -256,8 +259,10 @@
     </div>
 
     <services-content 
-        gallery-name="Custom Deck Project Gallery"
-        gallery-subtitle="Explore our custom decks — each one uniquely designed for Colorado homeowners. From multi-level layouts to built-in features, every project showcases expert craftsmanship."
+        gallery-title="Past Work"
+        gallery-subtitle="Custom Deck Project Gallery"
+        gallery-description="Here are examples of our custom decks across Denver, Littleton, and surrounding areas in CO."
+        gallery-filters="wood-deck,composite-deck"
     ></services-content>
     
     <site-footer></site-footer>
@@ -270,15 +275,8 @@
                 const link = [...document.querySelectorAll(".sb-tree a")].find(a => a.textContent.trim().startsWith(text));
                 if (link) link.classList.add("active");
             }
-            activateSidebar("Custom Wood Decks");
+            activateSidebar("Custom Decks");
         };
-
-        const menuBtn = document.getElementById('menuBtn');
-        const closeMenuBtn = document.getElementById('closeMenuBtn');
-        if (menuBtn && closeMenuBtn) {
-            menuBtn.addEventListener('click', () => document.getElementById('mobileMenu')?.classList.add('open'));
-            closeMenuBtn.addEventListener('click', () => document.getElementById('mobileMenu')?.classList.remove('open'));
-        }
     </script>
 </body>
 
