@@ -1,8 +1,8 @@
 const Projects = [
     {
-        name: "",
-        description: "",
-        location: "",
+        name: "Hi there",
+        description: "hello",
+        location: "banned",
         categories: ["composite-deck"],
         images: ["compositedeck-project1.1.jpg"]
     },
@@ -113,9 +113,9 @@ const Projects = [
         ]
     },
     {
-        name: "",
-        description: "",
-        location: "",
+        name: "HEYYY",
+        description: "HEY BRUH",
+        location: "House",
         categories: ["stamped-concrete"],
         images: [
             "stampedconcrete-project1.1.jpeg",
