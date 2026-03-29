@@ -40,42 +40,81 @@
 
     <site-navbar></site-navbar>
 
-    <!-- Hero -->
-    <section class="hero grid-pattern">
-        <div class="container" style="max-width:1500px; width: 100%;">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <p class="badge">Colorado's Most Trusted Deck Builders</p>
-                    <div class="wood-accent"></div>
-                    <h1>BUILD YOUR<br><span class="accent">OUTDOOR</span> DREAM SPACE</h1>
-                    <p>Custom deck design and construction for homeowners who demand quality craftsmanship, premium
-                        materials, and outdoor spaces that last a lifetime.</p>
-                    <div class="buttons">
-                        <a href="#contact" class="btn-primary">Start Your Project</a>
-                        <a href="#gallery" class="btn-secondary">View Our Work</a>
-                    </div>
-                    <div class="stats">
-                        <div class="stat">
-                            <div class="stat-number">2,000+</div>
-                            <div class="stat-label">Decks Built</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">31</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Satisfaction</div>
-                        </div>
-                    </div>
+<!-- ═══ GALLERY HERO ═══ -->
+<section class="hero">
+    <div class="hero-corner hero-corner--tl"></div>
+    <div class="hero-corner hero-corner--br"></div>
+
+    <div class="hero-mobile-bg">
+        <img src="../images/banner-COMPRESSED.jpg" alt="">
+    </div>
+
+    <div class="hero-left">
+        <div class="hero-content">
+            <p class="hero-tag">EST. 1994 · COLORADO</p>
+            <h1>CRAFTING<br>COLORADO'S<br>FINEST <em>Decks</em></h1>
+            <p class="hero-desc">31 years of precision craftsmanship. 2,000+ outdoor
+                spaces built to endure Colorado's extremes and elevate the way you live.</p>
+            <div class="buttons">
+                <a href="#contact" class="btn-primary">Start Your Project</a>
+                <a href="#gallery" class="btn-secondary">View Our Work</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-num">2,000+</span>
+                    <span class="hero-stat-label">Decks Built</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num">31</span>
+                    <span class="hero-stat-label">Years</span>
+                </div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num">100%</span>
+                    <span class="hero-stat-label">Satisfaction</span>
                 </div>
             </div>
         </div>
-        <div class="hero-img-container"></div>
-        <div class="scroll-indicator"><span>SCROLL</span>
-            <div class="scroll-line"></div>
+    </div>
+
+    <!-- Right: Still Image Mosaic -->
+    <div class="hero-gallery">
+        <!-- 1 — Featured (wide, top-left) -->
+        <div class="hero-gallery-item">
+            <img src="./images/projects/compositedeck-project8.1.jpg" alt="Featured deck build" loading="eager">
+            <div class="gallery-caption">
+                <h3>Beautiful Mountain Deck</h3>
+                <span>Colorado · Composite</span>
+            </div>
         </div>
-    </section>
+
+        <!-- 2 — Small top-right -->
+        <div class="hero-gallery-item">
+            <img src="./images/projects/wooddeck-project2.4.jpeg" alt="Outdoor living space" loading="eager">
+            <div class="gallery-caption">
+                <h3>Beautiful White Deck</h3>
+                <span>Colorado</span>
+            </div>
+        </div>
+
+        <!-- 3 — Small bottom-left -->
+        <div class="hero-gallery-item">
+            <img src="./images/projects/pergola-project1.1.jpeg" alt="Premium deck project" loading="eager">
+            <div class="gallery-caption">
+                <h3>Cozy Pergola</h3>
+                <span>Colorado</span>
+            </div>
+        </div>
+
+        <!-- 4 — Wide bottom-right -->
+        <div class="hero-gallery-item">
+            <img src="./images/projects/wooddeck-project4.1.jpg" alt="Multi-level deck" loading="eager">
+            <div class="gallery-caption">
+                <h3>Beautiful Deck</h3>
+                <span>Colorado · Warm</span>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Trust Bar -->
     <section class="trust-bar">
@@ -102,13 +141,6 @@
                 </svg><span>Accredited with BBB</span></div>
         </div>
     </section>
-
-    <site-gallery 
-        filters="all" 
-        gallery-title="Our Work" 
-        gallery-subtitle="Gallery"
-        gallery-description="Every deck we build is custom-designed for the space and the homeowner. Here's a sample of our past work."
-    ></site-gallery>
 
     <!-- Services -->
     <section id="services" class="section section-pattern">
@@ -202,6 +234,13 @@
             </div>
         </div>
     </section>
+
+     <site-gallery 
+        filters="all" 
+        gallery-title="Our Work" 
+        gallery-subtitle="Gallery"
+        gallery-description="Every deck we build is custom-designed for the space and the homeowner. Here's a sample of our past work."
+    ></site-gallery>
 
     <!-- Testimonials -->
     <section id="testimonials" class="section bg-white">
