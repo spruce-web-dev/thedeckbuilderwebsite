@@ -56,7 +56,7 @@ class SiteContact extends HTMLElement {
 
                 <!-- RIGHT SIDE FORM -->
                 <div>
-                    <form action="https://formsubmit.co/jacopofb03@gmail.com" method="POST" class="quote-form">
+                    <form action="https://formsubmit.co/Richard@DeckBuilderofCO.com" method="POST" class="quote-form">
                         <!-- FormSubmit config -->
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_subject" value="New Quote Request">
