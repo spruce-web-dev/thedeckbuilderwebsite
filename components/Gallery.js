@@ -29,7 +29,7 @@ class SiteGallery extends HTMLElement {
         }).join("");
 
         this.innerHTML = `
-            <section id="gallery" class="section bg-white">
+            <section id="gallery" class="section section-pattern">
                 <div class="container">
                     <div class="section-header" data-animate>
                         <p id="gallery-title"></p>
