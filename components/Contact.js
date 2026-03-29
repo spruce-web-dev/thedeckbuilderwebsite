@@ -57,45 +57,47 @@ class SiteContact extends HTMLElement {
                 <!-- RIGHT SIDE FORM -->
                 <div>
                     <form action="https://formsubmit.co/jacopofb03@gmail.com" method="POST" class="quote-form">
+                        <!-- FormSubmit config -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="New Quote Request">
+
                         <div class="form-row">
                             <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" name="name" class="form-input" placeholder="Enter name..." required>
+                                <label for="name">Name</label>
+                                <input id="name" type="text" name="name" class="form-input" placeholder="Enter name..." required>
                             </div>
 
                             <div class="form-group">
-                                <label>Phone</label>
-                                <input type="tel" name="phone" class="form-input" placeholder="Enter phone number..." required>
+                                <label for="phone">Phone</label>
+                                <input id="phone" type="tel" name="phone" class="form-input" placeholder="Enter phone number..." required>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" name="email" class="form-input" placeholder="Enter email..." required>
+                            <label for="email">Email</label>
+                            <input id="email" type="email" name="email" class="form-input" placeholder="Enter email..." required>
                         </div>
 
                         <div class="form-group">
-                            <label>Project Type</label>
-                            <select name="projectType" class="form-input">
+                            <label for="projectType">Project Type</label>
+                            <select id="projectType" name="projectType" class="form-input">
                                 <option value="">Select a project type</option>
-                                <option value="new-wood">Wood Deck</option>
-                                <option value="new-composite">Composite Deck</option>
-                                <option value="porch">Pergola or Covered Patio</option>
-                                <option value="pergola">Stamped Concrete</option>
-                                <option value="other">Other</option>
+                                <option value="Wood Deck">Wood Deck</option>
+                                <option value="Composite Deck">Composite Deck</option>
+                                <option value="Pergola or Covered Patio">Pergola or Covered Patio</option>
+                                <option value="Stamped Concrete">Stamped Concrete</option>
+                                <option value="Other">Other</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label>Project Details</label>
-                            <textarea name="message" rows="4" class="form-input" placeholder="Anything else we should know?..."></textarea>
+                            <label for="message">Project Details</label>
+                            <textarea id="message" name="message" rows="4" class="form-input" placeholder="Anything else we should know?..."></textarea>
                         </div>
 
                         <button type="submit" class="btn-primary form-submit">
-                            Get My Free Quote
+                            Get Quote
                         </button>
-
-                        <p class="form-note">We respond to all inquiries within 24 hours</p>
                     </form>
                 </div>
 
@@ -126,10 +128,10 @@ class SiteContact extends HTMLElement {
         const modal = this.querySelector(".modal-overlay");
         const closeBtn = this.querySelector(".close-modal");
 
-        form.addEventListener("submit", (e) => {
-            modal.classList.add("active");
-            form.reset();
-        });
+        //form.addEventListener("submit", (e) => {
+        //    modal.classList.add("active");
+        //    form.reset();
+        //});
 
         closeBtn.addEventListener("click", () => {
             modal.classList.remove("active");
