@@ -35,8 +35,7 @@ class SiteFooter extends HTMLElement {
                             <ul>
                                 <li>(303) 948-8821</li>
                                 <li>Richard@DeckBuilderofCO.com</li>
-                                <li>Mon – Fri: 7am – 6pm</li>
-                                <li>Sat: 8am – 2pm</li>
+                                <li>Mon – Fri: 7am – 7pm</li>
                             </ul>
                         </div>
                     </div>
