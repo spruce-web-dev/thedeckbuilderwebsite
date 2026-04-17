@@ -2,7 +2,7 @@ class TestimonialSection extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `
             <!-- Testimonials -->
-            <section id="testimonials" class="section bg-white" style="padding-top: 0;">
+            <section id="testimonials" class="section bg-white">
                 <div class="container">
                     <div class="section-header">
                         <p>What Homeowners Say</p>
