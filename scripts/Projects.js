@@ -1,7 +1,7 @@
 const Projects = [
     {
-        name: "Hi there",
-        description: "hello",
+        name: "",
+        description: "",
         location: "banned",
         categories: ["composite-deck"],
         images: ["compositedeck-project1.1.jpg"]
