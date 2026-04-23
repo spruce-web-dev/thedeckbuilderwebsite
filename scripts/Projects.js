@@ -2,7 +2,7 @@ const Projects = [
     {
         name: "",
         description: "",
-        location: "banned",
+        location: "",
         categories: ["composite-deck"],
         images: ["compositedeck-project1.1.jpg"]
     },
