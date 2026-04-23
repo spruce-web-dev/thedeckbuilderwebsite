@@ -113,8 +113,8 @@ const Projects = [
         ]
     },
     {
-        name: "HEYYY",
-        description: "HEY BRUH",
+        name: "",
+        description: "",
         location: "House",
         categories: ["stamped-concrete"],
         images: [
