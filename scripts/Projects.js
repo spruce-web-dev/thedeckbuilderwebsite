@@ -115,7 +115,7 @@ const Projects = [
     {
         name: "",
         description: "",
-        location: "House",
+        location: "",
         categories: ["stamped-concrete"],
         images: [
             "stampedconcrete-project1.1.jpeg",

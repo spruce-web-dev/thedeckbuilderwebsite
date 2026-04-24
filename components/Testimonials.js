@@ -111,6 +111,13 @@ class TestimonialSection extends HTMLElement {
                             <p class="location">Littleton, CO</p>
                         </div>
                     </div>
+
+                    <!-- CTA -->
+                    <div class="testimonial-cta">
+                        <a href="https://g.page/r/CQAi-wSqf3BwEBM/review" class="btn btn-primary leave-review-btn">
+                            Leave Us a Review
+                        </a>
+                    </div>
                 </div>
             </section>
         `;
