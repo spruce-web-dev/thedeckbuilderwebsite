@@ -319,6 +319,11 @@
 /* ═══════════════════════════════════════════════
    MOBILE
    ═══════════════════════════════════════════════ */
+
+.mobile-phone-cta {
+    display: none;
+}
+
 @media (max-width: 1023px) {
     .hero { height: auto; min-height: calc(100vh - 100px); max-height: none; }
     .hero-left {
@@ -342,6 +347,9 @@
         opacity: .1; filter: saturate(.4) contrast(1.1);
     }
     .hero-left { z-index: 2; }
+
+    #view-our-work { display: none; }
+    .mobile-phone-cta { display: inline; }
 }
 
 @media (min-width: 1024px) {

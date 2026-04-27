@@ -29,6 +29,9 @@
     <!-- Scripts -->
     <script src="./scripts/InitMobileMenuFunctionality.js"></script>
     <script src="./scripts/InitScrollAnimations.js"></script>
+    <script src="./scripts/Projects.js"></script>
+    <script src="./scripts/GalleryControls.js"></script>
+    <script src="./scripts/TestimonialControls.js"></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-798596772"></script>
@@ -39,93 +42,99 @@
 
         gtag('config', 'AW-798596772');
     </script>
-</head>
 
-<!-- JS -->
-<script src="./scripts/Projects.js"></script>
-<script src="./scripts/GalleryControls.js"></script>
-<script src="./scripts/TestimonialControls.js"></script>
+    <script src="./scripts/google_tags/ReportConversion.js"></script>
+</head>
 
 <body>
     <div class="noise-overlay" aria-hidden="true"></div>
 
     <site-navbar></site-navbar>
 
-<!-- ═══ GALLERY HERO ═══ -->
-<section class="hero">
-    <div class="hero-corner hero-corner--tl"></div>
-    <div class="hero-corner hero-corner--br"></div>
+    <!-- ═══ GALLERY HERO ═══ -->
+    <section class="hero">
+        <div class="hero-corner hero-corner--tl"></div>
+        <div class="hero-corner hero-corner--br"></div>
 
-    <div class="hero-mobile-bg">
-        <img src="../images/banner-COMPRESSED.jpg" alt="">
-    </div>
+        <div class="hero-mobile-bg">
+            <img src="../images/banner-COMPRESSED.jpg" alt="">
+        </div>
 
-    <div class="hero-left">
-        <div class="hero-content">
-            <p class="hero-tag">EST. 1994 · COLORADO</p>
-            <h1>CRAFTING<br>COLORADO'S<br>FINEST <em>Decks</em></h1>
-            <p class="hero-desc">31 years of precision craftsmanship. 2,000+ outdoor
-                spaces built to endure Colorado's extremes and elevate the way you live.</p>
-            <div class="buttons">
-                <a href="#contact" class="btn-primary">Start Your Project</a>
-                <a href="#gallery" class="btn-secondary">View Our Work</a>
-            </div>
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <span class="hero-stat-num">2,000+</span>
-                    <span class="hero-stat-label">Decks Built</span>
+        <div class="hero-left">
+            <div class="hero-content">
+                <p class="hero-tag">EST. 1994 · COLORADO</p>
+                <h1>CRAFTING<br>COLORADO'S<br>FINEST <em>Decks</em></h1>
+                <p class="hero-desc">31 years of precision craftsmanship. 2,000+ outdoor
+                    spaces built to endure Colorado's extremes and elevate the way you live.</p>
+                <div class="buttons">
+                    <a href="#contact" class="btn-primary">Start Your Project</a>
+                    <a href="#gallery" class="btn-secondary" id="view-our-work">View Our Work</a>
+
+                    <!-- Show phone number on mobile -->
+                    <a
+                        href="tel:+13039488821" 
+                        class="btn-secondary mobile-phone-cta"
+                        onclick="return gtag_report_conversion('tel:+13039488821');"
+                    >
+                        303-948-8821
+                    </a>
                 </div>
-                <div class="hero-stat">
-                    <span class="hero-stat-num">31</span>
-                    <span class="hero-stat-label">Years</span>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">2,000+</span>
+                        <span class="hero-stat-label">Decks Built</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">31</span>
+                        <span class="hero-stat-label">Years</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-num">100%</span>
+                        <span class="hero-stat-label">Satisfaction</span>
+                    </div>
                 </div>
-                <div class="hero-stat">
-                    <span class="hero-stat-num">100%</span>
-                    <span class="hero-stat-label">Satisfaction</span>
+            </div>
+        </div>
+
+        <!-- Right: Still Image Mosaic -->
+        <div class="hero-gallery">
+            <!-- 1 — Featured (wide, top-left) -->
+            <div class="hero-gallery-item">
+                <img src="./images/projects/compositedeck-project8.1.jpg" alt="Featured deck build" loading="eager">
+                <div class="gallery-caption">
+                    <h3>Beautiful Mountain Deck</h3>
+                    <span>Colorado · Composite</span>
+                </div>
+            </div>
+
+            <!-- 2 — Small top-right -->
+            <div class="hero-gallery-item">
+                <img src="./images/projects/wooddeck-project2.4.jpeg" alt="Outdoor living space" loading="eager">
+                <div class="gallery-caption">
+                    <h3>Beautiful White Deck</h3>
+                    <span>Colorado</span>
+                </div>
+            </div>
+
+            <!-- 3 — Small bottom-left -->
+            <div class="hero-gallery-item">
+                <img src="./images/projects/pergola-project1.1.jpeg" alt="Premium deck project" loading="eager">
+                <div class="gallery-caption">
+                    <h3>Cozy Pergola</h3>
+                    <span>Colorado</span>
+                </div>
+            </div>
+
+            <!-- 4 — Wide bottom-right -->
+            <div class="hero-gallery-item">
+                <img src="./images/projects/wooddeck-project4.1.jpg" alt="Multi-level deck" loading="eager">
+                <div class="gallery-caption">
+                    <h3>Beautiful Deck</h3>
+                    <span>Colorado · Warm</span>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Right: Still Image Mosaic -->
-    <div class="hero-gallery">
-        <!-- 1 — Featured (wide, top-left) -->
-        <div class="hero-gallery-item">
-            <img src="./images/projects/compositedeck-project8.1.jpg" alt="Featured deck build" loading="eager">
-            <div class="gallery-caption">
-                <h3>Beautiful Mountain Deck</h3>
-                <span>Colorado · Composite</span>
-            </div>
-        </div>
-
-        <!-- 2 — Small top-right -->
-        <div class="hero-gallery-item">
-            <img src="./images/projects/wooddeck-project2.4.jpeg" alt="Outdoor living space" loading="eager">
-            <div class="gallery-caption">
-                <h3>Beautiful White Deck</h3>
-                <span>Colorado</span>
-            </div>
-        </div>
-
-        <!-- 3 — Small bottom-left -->
-        <div class="hero-gallery-item">
-            <img src="./images/projects/pergola-project1.1.jpeg" alt="Premium deck project" loading="eager">
-            <div class="gallery-caption">
-                <h3>Cozy Pergola</h3>
-                <span>Colorado</span>
-            </div>
-        </div>
-
-        <!-- 4 — Wide bottom-right -->
-        <div class="hero-gallery-item">
-            <img src="./images/projects/wooddeck-project4.1.jpg" alt="Multi-level deck" loading="eager">
-            <div class="gallery-caption">
-                <h3>Beautiful Deck</h3>
-                <span>Colorado · Warm</span>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Trust Bar -->
     <section class="trust-bar">

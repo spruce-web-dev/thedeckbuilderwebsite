@@ -132,6 +132,25 @@ class SiteContact extends HTMLElement {
         //    modal.classList.add("active");
         //    form.reset();
         //});
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            let submitted = false;
+
+            const submitForm = () => {
+                if (submitted) return;
+                submitted = true;
+                e.target.submit();
+            };
+
+            gtag('event', 'conversion', {
+                'send_to': 'AW-798596772/DhTaCLf1vqMcEKS95vwC',
+                'event_callback': submitForm
+            });
+
+            // fallback (required, not optional)
+            setTimeout(submitForm, 800);
+        });
 
         closeBtn.addEventListener("click", () => {
             modal.classList.remove("active");
