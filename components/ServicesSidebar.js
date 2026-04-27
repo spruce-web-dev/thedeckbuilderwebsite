@@ -41,7 +41,7 @@ class ServicesSidebar extends HTMLElement {
                     <h3>Ready to Start?</h3>
                     <p>Free on-site quote · No obligation</p>
                     <a href="#contact" class="sb-cta-btn">Get a Free Quote</a>
-                    <a href="tel:+13039488821" class="sb-cta-phone"><i class="fas fa-phone"></i> 303-948-8821</a>
+                    <a href="tel:+13039488821" class="sb-cta-phone" onclick="return gtag_report_phone_conversion('tel:+13039488821');"><i class="fas fa-phone"></i> 303-948-8821</a>
                 </div>
             </aside>
         `;

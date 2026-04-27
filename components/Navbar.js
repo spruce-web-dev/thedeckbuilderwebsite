@@ -28,7 +28,7 @@ class SiteNavbar extends HTMLElement {
                                 </svg>
                                 <a
                                     href="tel:+13039488821"
-                                    onclick="return gtag_report_conversion('tel:+13039488821');"
+                                    onclick="return gtag_report_phone_conversion('tel:+13039488821');"
                                 >
                                     303-948-8821
                                 </a>
