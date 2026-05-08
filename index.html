@@ -55,7 +55,14 @@
         <div class="hero-corner hero-corner--br"></div>
 
         <div class="hero-mobile-bg">
-            <img src="../images/banner-COMPRESSED.jpg" fetchpriority="high" alt="">
+            <img 
+                src="../images/banner-COMPRESSED.jpg" 
+                srcset="
+                    ../images/banner-COMPRESSED.jpg 600w,
+                    ../images/banner-COMPRESSED-large.jpg 1500w
+                "
+                fetchpriority="high" alt=""
+            >
         </div>
 
         <div class="hero-left">
