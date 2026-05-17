@@ -56,10 +56,11 @@ class SiteContact extends HTMLElement {
 
                 <!-- RIGHT SIDE FORM -->
                 <div>
-                    <form action="https://formsubmit.co/Richard@DeckBuilderofCO.com" method="POST" class="quote-form">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="quote-form">
                         <!-- FormSubmit config -->
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_subject" value="New Quote Request">
+                        <input type="hidden" name="access_key" value="f7d298f0-9ae7-487e-a57a-fcb9398afe2a">
 
                         <div class="form-row">
                             <div class="form-group">
