@@ -56,47 +56,60 @@ class SiteContact extends HTMLElement {
 
                 <!-- RIGHT SIDE FORM -->
                 <div>
-                    <form action="https://api.web3forms.com/submit" method="POST" class="quote-form">
-                        <!-- FormSubmit config -->
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_subject" value="New Quote Request">
-                        <input type="hidden" name="access_key" value="f7d298f0-9ae7-487e-a57a-fcb9398afe2a">
-
+                    <form id="quoteForm" class="quote-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input id="name" type="text" name="name" class="form-input" placeholder="Enter name..." required>
+                                <input id="name" type="text" name="name"
+                                    class="form-input"
+                                    placeholder="Enter name..."
+                                    required>
                             </div>
 
                             <div class="form-group">
                                 <label for="phone">Phone</label>
-                                <input id="phone" type="tel" name="phone" class="form-input" placeholder="Enter phone number..." required>
+                                <input id="phone" type="tel" name="phone"
+                                    class="form-input"
+                                    placeholder="Enter phone number..."
+                                    required>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input id="email" type="email" name="email" class="form-input" placeholder="Enter email..." required>
+                            <input id="email"
+                                type="email"
+                                name="email"
+                                class="form-input"
+                                placeholder="Enter email..."
+                                required>
                         </div>
-
                         <div class="form-group">
                             <label for="projectType">Project Type</label>
-                            <select id="projectType" name="projectType" class="form-input">
+                            <select id="projectType"
+                                name="projectType"
+                                class="form-input">
+
                                 <option value="">Select a project type</option>
                                 <option value="Wood Deck">Wood Deck</option>
                                 <option value="Composite Deck">Composite Deck</option>
                                 <option value="Pergola or Covered Patio">Pergola or Covered Patio</option>
                                 <option value="Stamped Concrete">Stamped Concrete</option>
                                 <option value="Other">Other</option>
+
                             </select>
                         </div>
-
                         <div class="form-group">
                             <label for="message">Project Details</label>
-                            <textarea id="message" name="message" rows="4" class="form-input" placeholder="Anything else we should know?..."></textarea>
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="4"
+                                class="form-input"
+                                placeholder="Anything else we should know?...">
+                            </textarea>
                         </div>
-
-                        <button type="submit" class="btn-primary form-submit">
+                        <button type="submit"
+                            class="btn-primary form-submit">
                             Get Quote
                         </button>
                     </form>
@@ -129,27 +142,68 @@ class SiteContact extends HTMLElement {
         const modal = this.querySelector(".modal-overlay");
         const closeBtn = this.querySelector(".close-modal");
 
-        //form.addEventListener("submit", (e) => {
-        //    modal.classList.add("active");
-        //    form.reset();
-        //});
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 
             let submitted = false;
 
-            const submitForm = () => {
+            const submitForm = async () => {
                 if (submitted) return;
                 submitted = true;
-                e.target.submit();
+
+                const submitButton = form.querySelector(".form-submit");
+
+                submitButton.disabled = true;
+                submitButton.innerText = "Sending...";
+
+                try {
+                    const payload = {
+                        destination: "thedeckbuilderofcolorado@gmail.com",
+                        data: {
+                            name: form.name.value,
+                            phone: form.phone.value,
+                            email: form.email.value,
+                            projectType: form.projectType.value,
+                            message: form.message.value
+                        }
+                    };
+
+                    const response = await fetch(
+                        "https://sprucedev-form-sender.vercel.app/api/contact", // the backend service I made
+                        {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify(payload)
+                        }
+                    );
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        form.reset();
+                        modal?.classList.remove("active");
+                        alert("Quote request sent!");
+                    } else {
+                        alert("Failed to send.");
+                    }
+
+                } catch (err) {
+                    console.error(err);
+                    alert("Something went wrong.");
+                }
+
+                submitButton.disabled = false;
+                submitButton.innerText = "Get Quote";
             };
 
             gtag('event', 'conversion', {
-                'send_to': 'AW-798596772/DhTaCLf1vqMcEKS95vwC',
-                'event_callback': submitForm
+                send_to: 'AW-798596772/DhTaCLf1vqMcEKS95vwC',
+                event_callback: submitForm
             });
 
-            // fallback (required, not optional)
+            // fallback if callback never fires
             setTimeout(submitForm, 800);
         });
 
