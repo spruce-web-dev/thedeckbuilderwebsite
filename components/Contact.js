@@ -234,7 +234,7 @@ class SiteContact extends HTMLElement {
                     if (result.success) {
                         form.reset();
                         modal?.classList.remove("active");
-                        showModal("Campaign request submitted successfully.");
+                        showModal("Request submitted successfully.");
                     } else {
                         showModal("Failed to send request.", "error");
                     }
