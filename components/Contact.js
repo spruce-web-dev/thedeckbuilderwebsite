@@ -119,24 +119,74 @@ class SiteContact extends HTMLElement {
         </div>
 
         <!-- SUCCESS MODAL -->
-        <div class="modal-overlay">
-            <div class="modal-content">
-                <div class="modal-icon">
-                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+        <div id="modal-overlay">
+            <div class="modal-card">
+                <div class="modal-icon-wrap"></div>
+                <div class="modal-title"></div>
+                <div class="modal-message"></div>
+                <div class="modal-timer">
+                    <svg class="modal-ring" width="44" height="44" viewBox="0 0 44 44">
+                        <circle class="track" cx="22" cy="22" r="18"/>
+                        <circle class="progress" cx="22" cy="22" r="18"/>
                     </svg>
+                    <span class="modal-timer-text"></span>
                 </div>
-
-                <h3>Quote Request Sent</h3>
-
-                <p>
-                    Thanks for reaching out. We'll review your project details and get back to you within 24 hours.
-                </p>
-
-                <button class="btn-primary close-modal">Got It</button>
+                <button class="modal-close-btn">Go to homepage now</button>
             </div>
         </div>
         `;
+
+        function showModal(message, type = "success", duration = 4000, redirectUrl = "/") {
+            const overlay = document.getElementById("modal-overlay");
+            const card = overlay.querySelector(".modal-card");
+            const isSuccess = type === "success";
+
+            card.className = `modal-card ${type}`;
+
+            card.querySelector(".modal-icon-wrap").innerHTML = isSuccess
+                ? `<svg viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`
+                : `<svg viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`;
+
+            card.querySelector(".modal-title").textContent = isSuccess ? "Message Sent!" : "Something Went Wrong";
+            card.querySelector(".modal-message").innerHTML = message;
+
+            const circumference = 2 * Math.PI * 18;
+            const ring = card.querySelector(".modal-ring .progress");
+            const txt = card.querySelector(".modal-timer-text");
+
+            ring.style.transition = "none";
+            ring.style.strokeDasharray = circumference;
+            ring.style.strokeDashoffset = 0;
+
+            overlay.classList.add("show");
+
+            const secs = Math.round(duration / 1000);
+            let remaining = secs;
+            txt.textContent = `Redirecting in ${remaining}s`;
+
+            requestAnimationFrame(() => {
+                ring.style.transition = `stroke-dashoffset ${secs}s linear`;
+                ring.style.strokeDashoffset = circumference;
+            });
+
+            const interval = setInterval(() => {
+                remaining--;
+                txt.textContent = remaining > 0 ? `Redirecting in ${remaining}s` : "Redirecting...";
+                if (remaining <= 0) clearInterval(interval);
+            }, 1000);
+
+            const redirectTimer = setTimeout(() => {
+                overlay.classList.remove("show");
+                setTimeout(() => window.location.href = redirectUrl, 400);
+            }, duration);
+
+            card.querySelector(".modal-close-btn").onclick = () => {
+                clearInterval(interval);
+                clearTimeout(redirectTimer);
+                overlay.classList.remove("show");
+                setTimeout(() => window.location.href = redirectUrl, 400);
+            };
+        }
 
         const form = this.querySelector(".quote-form");
         const modal = this.querySelector(".modal-overlay");
@@ -184,14 +234,14 @@ class SiteContact extends HTMLElement {
                     if (result.success) {
                         form.reset();
                         modal?.classList.remove("active");
-                        alert("Quote request sent!");
+                        showModal("Campaign request submitted successfully.");
                     } else {
-                        alert("Failed to send.");
+                        showModal("Failed to send request.", "error");
                     }
 
                 } catch (err) {
                     console.error(err);
-                    alert("Something went wrong.");
+                    showModal("Unable to send request.", "error");
                 }
 
                 submitButton.disabled = false;
