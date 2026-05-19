@@ -125,6 +125,8 @@
     background: transparent;
     border: none;
     cursor: pointer;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
 }
 
 .mobile-menu-btn svg {

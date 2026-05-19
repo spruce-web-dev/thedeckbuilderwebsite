@@ -66,6 +66,26 @@ class SiteNavbar extends HTMLElement {
                 </div>
             </div>
         `;
+
+        const mobileMenu = this.querySelector('#mobileMenu');
+        const menuBtn = this.querySelector('#menuBtn');
+        const closeMenuBtn = this.querySelector('#closeMenuBtn');
+
+        function openMenu() {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        if (menuBtn && mobileMenu && closeMenuBtn) {
+            menuBtn.addEventListener('click', openMenu);
+            closeMenuBtn.addEventListener('click', closeMenu);
+            mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+        }
     }
 }
 
