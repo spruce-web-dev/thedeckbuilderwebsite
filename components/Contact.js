@@ -105,8 +105,7 @@ class SiteContact extends HTMLElement {
                                 name="message"
                                 rows="4"
                                 class="form-input"
-                                placeholder="Anything else we should know?...">
-                            </textarea>
+                                placeholder="Anything else we should know?..."></textarea>
                         </div>
                         <button type="submit"
                             class="btn-primary form-submit">
